@@ -1,31 +1,40 @@
 .add-form {
-	// background: #ffffff;
-	// box-shadow: 0px 1px 4px rgba(9, 45, 66, 0.25);
-	// border-radius: 3px;
-	// padding: 12px;
-	padding: 0 12px 12px 12px;
+  
+  padding: 0 12px 12px 12px;
 
+  &__input {
 
-	&__input {
-		// padding: 0 12px 12px 12px;
-		textarea {
-			 border: 0;
-			 padding: 0;
-			 margin: 0;
-			 width: 100%;
-			 resize: none;
-			 cursor: text;
-		}
-	}
+    textarea {
+      border: 0;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      resize: none;
+      cursor: text;
+    }
+  }
 
-	&__bottom {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		
-		&-clear {
-			cursor: pointer;
-		}
-	}
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-clear {
+      cursor: pointer;
+    }
+
+    &-add-btn {
+      padding: 12px;
+      text-align: center;
+      border-radius: 0 0 3px 3px;
+	  color: #6b808c;
+	  width: 100%;
+
+      &:hover {
+        background-color: darken(#dfe3e6, 10);
+        cursor: pointer;
+        color: darken(#6b808c, 50);
+      }
+    }
+  }
 }
-

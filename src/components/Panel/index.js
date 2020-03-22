@@ -1,17 +1,19 @@
-import React, { Fragment } from "react";
-import { Button, Card, AddForm } from "../index";
+import React from "react";
+import { Card, AddForm } from "../index";
 import "./Panel.scss";
+import classNames from 'classnames';
+ 
 
-
-
-const Panel = ({ items }) => {
+const Panel = ({ cards }) => {
   return (
-    <div className="panel">
-      <div className="panel__items">
-        {items.map(elem => (
-          <Card {...elem} />
+    <div className={classNames('panel', {'panel--empty': !cards})}>
+      {cards &&
+	  <div className="panel__items">
+        {cards.map((elem, index) => ( 
+          <Card key={index}>{elem.text}</Card>
 		))}
-      </div>
+      </div>}
+
 	  <AddForm />
     </div>
   );

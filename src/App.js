@@ -4,14 +4,13 @@ import "./App.scss";
 
 function App() {
   return (
-    <div>
-      <Panel items={[
+    <div className='app'>
+      <Panel cards={[
 		  {text: 'Пройти курсы по реакту'},
 		  {text: 'Погулять'},
 		  {text: 'Сходить в магазин'}
 	  ]} />
-        {/* <Card text="Hello" /> */}
-		{/* <Button />  */}
+    <Panel cards={null} />
 
     </div>
   );

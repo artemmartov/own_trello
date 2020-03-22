@@ -7,7 +7,9 @@ const AddForm = ({ children }) => {
   const [showForm, setShowForm] = useState(false);
   const textareaRef = useRef(null);
   useEffect(() => {
-	  console.log(textareaRef); 
+	  if (textareaRef.current) {
+		textareaRef.current.focus(); 
+	  }
   }, [showForm]);
 
   return (
@@ -16,7 +18,7 @@ const AddForm = ({ children }) => {
         <div className="add-form">
           <div className="add-form__input">
             <Card>
-              <textarea ref={textareaRef} rows="3"></textarea>
+              <textarea placeholder='Введите название карточки'   ref={textareaRef} rows="3"></textarea>
             </Card>
             <div className="add-form__bottom">
               <Button>Добавить карточку</Button>
@@ -30,10 +32,10 @@ const AddForm = ({ children }) => {
           </div>
         </div>
       ) : (
-        <div className="panel__bottom">
+        <div className="add-form__bottom">
           <div
             onClick={setShowForm.bind(this, true)}
-            className="panel__bottom-add-btn"
+            className="add-form__bottom-add-btn"
           >
             <span>Добавить еще одну карточку</span>
           </div>
