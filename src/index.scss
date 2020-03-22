@@ -1,0 +1,18 @@
+html, body, #root {
+	height: 100%;
+	margin: 0 auto;
+	font-size: 14px;
+}
+
+* {
+	outline: none;
+	font-family: Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+#root {
+	background-image: url('./assets/budushchee_kitaj_tehnologii_163369_1920x1080.jpg');
+	background-position:  center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 20px;
+}

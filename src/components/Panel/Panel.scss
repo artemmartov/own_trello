@@ -1,0 +1,24 @@
+.panel {
+	 background: #dfe3e6;
+	 border-radius: 3px;
+	 width: 272px;
+
+	 &__items {
+		padding: 12px 12px 0 12px;
+	 }
+
+	 &__bottom {
+		&-add-btn {
+			padding: 12px;
+			text-align: center;
+			border-radius: 0 0 3px 3px;
+			color: #6b808c;
+
+			&:hover {
+				background-color: darken(#dfe3e6, 10);
+				cursor: pointer;
+				color: darken(#6b808c, 50)
+			}
+		}
+	 }
+}
