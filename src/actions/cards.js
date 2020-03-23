@@ -5,5 +5,13 @@ export default {
 			columnIndex,
 			text
 		}
+	}),
+	reorderCards: ({columnIndex, sourceIndex, destinationIndex}) => ({
+		type: 'CARDS:REORDER',
+		payload: {
+			columnIndex, 
+			sourceIndex, 
+			destinationIndex
+		}
 	})
 }

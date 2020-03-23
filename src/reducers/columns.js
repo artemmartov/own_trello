@@ -32,9 +32,19 @@ export default (state = initialState, action) => {
           title: action.payload,
           cards: []
         }
-	  ];
-	  case "COLUMNS:REMOVE":
-		return state.filter((_, index) => action.payload !== index);
+      ];
+    case "COLUMNS:REMOVE":
+      return state.filter((_, index) => action.payload !== index);
+    case "CARDS:REORDER": {
+      return state.map((item, index) => {
+        if (action.payload.columnIndex === index) {
+          const [removed] = item.cards.splice(action.payload.sourceIndex, 1);
+          item.cards.splice(action.payload.destinationIndex, 0, removed);
+          return item;
+        }
+        return item;
+      });
+    }
     default:
       return state;
   }
