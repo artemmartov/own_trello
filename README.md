@@ -1,4 +1,5 @@
 # Аналог веб-приложения TRELLO
 
 
-![Example](https://github.com/artemmartov/Skinali_maket/raw/master/images/gif.gif)
+
+![Example](https://github.com/artemmartov/own_trellot/raw/master/src/assets/111.jpg)
