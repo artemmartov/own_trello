@@ -2,8 +2,8 @@ import React from "react";
 // import PropTypes from 'prop-types';
 import "./Button.scss";
 
-const Button = ({ children }) => {
-  return <button className="button">{children}</button>;
+const Button = ({ children, onClick }) => {
+  return <button className="button" onClick={onClick}>{children}</button>;
 };
 
 // Card.PropTypes = {
