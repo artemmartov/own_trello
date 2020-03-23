@@ -3,7 +3,7 @@ import clear from "../../assets/cancel.png";
 import { Card, Button } from "../../components/index";
 import "./AddForm.scss";
 
-const AddForm = ({ children }) => {
+const AddForm = ({ children, onAddItem, isEmptyPanel }) => {
   const [showForm, setShowForm] = useState(false);
   const textareaRef = useRef(null);
   useEffect(() => {
@@ -18,10 +18,10 @@ const AddForm = ({ children }) => {
         <div className="add-form">
           <div className="add-form__input">
             <Card>
-              <textarea placeholder='Введите название карточки'   ref={textareaRef} rows="3"></textarea>
+              <textarea placeholder={isEmptyPanel ? 'Введите название колонки' : 'Введите название карточки'}   ref={textareaRef} rows="3"></textarea>
             </Card>
             <div className="add-form__bottom">
-              <Button>Добавить карточку</Button>
+              <Button>{isEmptyPanel ? 'Добавить колонку' : 'Добавить карточку'}</Button>
               <img
                 onClick={setShowForm.bind(this, false)}
                 className="add-form__bottom-clear"
@@ -37,7 +37,7 @@ const AddForm = ({ children }) => {
             onClick={setShowForm.bind(this, true)}
             className="add-form__bottom-add-btn"
           >
-            <span>Добавить еще одну карточку</span>
+            <span>{isEmptyPanel ? 'Добавить еще одну колонку' : 'Добавить еще одну карточку'}</span>
           </div>
         </div>
       )}

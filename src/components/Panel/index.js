@@ -1,23 +1,25 @@
 import React from "react";
 import { Card, AddForm } from "../index";
 import "./Panel.scss";
-import classNames from 'classnames';
- 
+import classNames from "classnames";
 
-const Panel = ({ cards }) => {
+const Panel = ({ title, cards }) => {
   return (
-    <div className={classNames('panel', {'panel--empty': !cards})}>
-      {cards &&
-	  <div className="panel__items">
-        {cards.map((elem, index) => ( 
-          <Card key={index}>{elem.text}</Card>
-		))}
+    <div className={classNames("panel", { "panel--empty": !cards })}>
+      {title && <div className="panel__title">
+        <b>{title}</b>
       </div>}
+      {cards && (
+        <div className="panel__items">
+          {cards.map((elem, index) => (
+            <Card key={index}>{elem}</Card>
+          ))}
+        </div>
+      )}
 
-	  <AddForm />
+      <AddForm isEmptyPanel={!cards} />
     </div>
   );
 };
-
 
 export default Panel;
